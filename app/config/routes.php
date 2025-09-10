@@ -43,10 +43,11 @@ defined('PREVENT_DIRECT_ACCESS') OR exit('No direct script access allowed');
 |
 */
 
-$router->get('/', 'Welcome::index');
+$router->get('/', Isla_CafeController::View_All_Items');
 $router->get('cafe/view-all-items', 'Isla_CafeController::View_All_Items');
 $router->match('cafe/create', 'Isla_CafeController::create', ['GET', 'POST']);
 $router->match('cafe/update/{id}', 'Isla_CafeController::update', ['GET', 'POST']);
 $router->get('cafe/delete/{id}', 'Isla_CafeController::delete');
 $router->get('cafe/soft-delete/{id}', 'Isla_CafeController::soft_delete');
+
 $router->get('cafe/restore/{id}', 'Isla_CafeController::restore');
